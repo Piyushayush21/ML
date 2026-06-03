@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Spam Detector</title>
+
+    <style>
+
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+
+    body{
+        font-family:Arial, sans-serif;
+        background:#f5f7fa;
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        height:100vh;
+    }
+
+    .container{
+        width:700px;
+        background:white;
+        padding:30px;
+        border-radius:15px;
+        box-shadow:0 0 15px rgba(0,0,0,0.15);
+        text-align:center;
+    }
+
+    h1{
+        margin-bottom:20px;
+    }
+
+    textarea{
+        width:100%;
+        height:200px;
+        padding:15px;
+        font-size:16px;
+        border:1px solid #ccc;
+        border-radius:10px;
+    }
+
+    button{
+        margin-top:20px;
+        padding:12px 25px;
+        border:none;
+        border-radius:8px;
+        background:#2563eb;
+        color:white;
+        font-size:18px;
+        cursor:pointer;
+    }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Email Spam Detector</h1>
+
+    <form action="/predict" method="POST">
+
+        <textarea
+            name="message"
+            placeholder="Enter Email Message">
+        </textarea>
+
+        <br>
+
+        <button type="submit">
+            Predict
+        </button>
+
+    </form>
+
+    {% if prediction %}
+        <h2>{{ prediction }}</h2>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Segoe UI',sans-serif;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #2563eb
+    );
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.container{
+
+    width:750px;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,0.15);
+
+    box-shadow:
+    0 8px 32px rgba(0,0,0,0.4);
+
+    text-align:center;
+}
+
+h1{
+
+    color:white;
+
+    margin-bottom:25px;
+
+    font-size:38px;
+
+    letter-spacing:1px;
+}
+
+.subtitle{
+
+    color:#cbd5e1;
+
+    margin-bottom:25px;
+}
+
+textarea{
+
+    width:100%;
+
+    height:220px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    padding:18px;
+
+    font-size:16px;
+
+    background:rgba(255,255,255,0.12);
+
+    color:white;
+}
+
+textarea::placeholder{
+    color:#d1d5db;
+}
+
+button{
+
+    margin-top:25px;
+
+    padding:14px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #06b6d4
+    );
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.3s;
+}
+
+button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 8px 25px rgba(59,130,246,0.5);
+}
+
+.result{
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    background:rgba(255,255,255,0.1);
+
+    color:white;
+}
+
+.footer{
+
+    margin-top:20px;
+
+    color:#cbd5e1;
+
+    font-size:14px;
+}
+
+</style>
